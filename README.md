@@ -1,3 +1,12 @@
+I created MOOD.MP3 because as a music lover, I wanted to generate playlists based on my mood, time period and genre preference so that I can discover music that matches my current mood or taste. 
+
+Requirements:  
+1. Single Page Application (SPA): My project is structured as a SPA using React.
+2. Components, Props, and State Management: My project uses multiple components (App, Login, Dashboard, Player, PlaylistDisplay, SelectionForm, TrackSearchResult, and useAuth) and demonstrates the use of props and state management effectively. 
+3. Use of Data from an API: My project interacts with the Spotify Web API to fetch and play tracks. 
+4. State Update Upon Return of JSON from POST Request: My project includes a function addMovie that updates the state upon receiving data from a POST request.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +77,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
