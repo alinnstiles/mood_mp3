@@ -1,0 +1,16 @@
+/* General reset and base styles */
+
+.dashboard-container {
+    background: linear-gradient(to right, #65fe08, #abfe78,pink , #ff00ff, rgb(235, 131, 235));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

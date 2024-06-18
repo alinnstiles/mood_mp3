@@ -1,81 +1,15 @@
-I created MOOD.MP3 because as a music lover, I wanted to generate playlists based on my mood, time period and genre preference so that I can discover music that matches my current mood or taste. 
+# READ ME:
+# Soundman - A Music-Themed Hangman Game
+## Overview
+Soundman transforms the classic hangman game into a musical challenge, combining entertainment with chart-topping hits.
+This game challenges players to guess a hidden song title from Billboard's Hot 100, offering a unique blend of trivia and music discovery.
+## Gameplay
+Starting a New Game: Each round begins with a mystery song from the top charts.
+Guessing Letters: Players guess and select letters from the alphabet to uncover the hidden song title.
+Uncovering the Song: Correct guesses reveal the corresponding letters in the song title, moving players closer to victory.
+## Progressive Soundman Drawing
+Limited Incorrect Guesses: Players have 7 attempts to solve the puzzle.
+Each incorrect guess leads to the progressive drawing of the Soundman figure.
+Victory Conditions: Success is achieved when players correctly identify the song title before the Soundman figure is fully drawn.
 
-Requirements:  
-1. Single Page Application (SPA): My project is structured as a SPA using React.
-2. Components, Props, and State Management: My project uses multiple components (App, Login, Dashboard, Player, PlaylistDisplay, SelectionForm, TrackSearchResult, and useAuth) and demonstrates the use of props and state management effectively. 
-3. Use of Data from an API: My project interacts with the Spotify Web API to fetch and play tracks. 
-4. State Update Upon Return of JSON from POST Request: My project includes a function addMovie that updates the state upon receiving data from a POST request.
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
+![alt text](image.png)# soundman

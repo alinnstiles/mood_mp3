@@ -1,0 +1,32 @@
+/* Reset some default styles */
+html, body, div, img {
+    margin: 0;
+    padding: 0;
+}
+
+.soundman-drawing {
+    width: 1000%;
+    height: auto;
+    position: relative;
+    overflow: hidden; /* Ensures nothing spills outside the container */
+}
+
+.soundman-drawing p {
+    text-align: center;
+    font-size: 180px;
+    color: #333;
+}
+
+/* Style for individual body parts */
+.soundman-drawing img {
+    max-width: 1000%; /* Ensure images scale down if needed */
+    max-height: 100%;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade effect */
+}
+
+/* Adjustments for responsiveness */
+@media (max-width: 1008px) {
+   .soundman-drawing {
+        padding: 250px;
+    }
+}

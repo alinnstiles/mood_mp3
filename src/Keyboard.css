@@ -1,0 +1,35 @@
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center; /* Center align items horizontally */
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+    justify-content: center; /* Center align items horizontally */
+}
+
+.key {
+    display: flex; /* Ensure buttons are flex containers */
+    justify-content: center; /* Center align content horizontally */
+    align-items: center; /* Center align content vertically */
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    user-select: none;
+    background-color: #fff;
+}
+
+.key:hover {
+    background-color: #000000;
+    color: #ffffff; /* Text color for highlighted keys */
+}
+
+
+.highlighted {
+    background-color: pink; /* Blue color for highlighting */
+    color: #000000; /* Text color for highlighted keys */
+}
