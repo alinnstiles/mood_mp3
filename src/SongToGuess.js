@@ -67,11 +67,11 @@ const SongToGuess = ({ accessToken }) => {
 
   useEffect(() => {
     if (allLettersGuessed()) {
-      setMessage('Nice job! Refresh to try again.');
+      setMessage("Wooo! The song is...");
       setShowAlbum(true);
       setShowPlayAgain(true); // Show Play Again button
     } else if (guessesLeft === 0) {
-      setMessage('Nice try! Refresh to try again.');
+      setMessage('Tough luck...The song is...');
       setShowAlbum(true);
       setShowPlayAgain(true); // Show Play Again button
     }
@@ -88,11 +88,13 @@ const SongToGuess = ({ accessToken }) => {
   };
 
   const renderSongTitle = () => {
+    const uniqueLettersInTitle = new Set(currentSong.title.replace(/ /g, '').toUpperCase());
+  
     return (
       <div className="song-title">
         {currentSong.title.split("").map((char, index) => (
           <span key={index} className="song-char">
-            {char === ' ' ? ' ' : (guessedLetters.has(char.toUpperCase()) || guessesLeft === 0 ? char : '_')}
+            {char === ' ' ? ' ' : (guessedLetters.has(char.toUpperCase()) ? char : (uniqueLettersInTitle.has(char.toUpperCase()) ? '_' : char))}
           </span>
         ))}
       </div>
@@ -103,27 +105,27 @@ const SongToGuess = ({ accessToken }) => {
     <div className="song-to-guess">
       <div className="soundman-header">
         <SoundmanDrawing wrongGuessCount={wrongGuessCount} />
-        <h2>Guess the Song Title</h2>
+        <h2 className="guess-song-title">{message ? message : "Guess the Song Title:"}</h2>
       </div>
       {showAlbum && (
         <div className="song-player-container">
           <Player accessToken={accessToken} trackUri={currentSong.uri} />
         </div>
       )}
-      {renderSongTitle()}
       <div className="keyboard-container">
+        {renderSongTitle()}
         {guessesLeft > 0 && !allLettersGuessed() && (
           <Keyboard onKeyPress={handleGuess} />
         )}
-      </div>
-      {message && (
-        <div className="message">
-          <p>{message}</p>
+          {showPlayAgain && (
+        <div className="play-again-container">
+          <button className="btn btn-primary" onClick={handlePlayAgain}>Play Again</button>
         </div>
       )}
-      {showPlayAgain && (
-        <div className="play-again-container">
-          <button onClick={handlePlayAgain}>Play Again</button>
+      </div>
+      {message && (
+        <div className={`message ${message.includes('Wooo') ? 'message-success' : 'message-failure'}`}>
+          {message}
         </div>
       )}
     </div>

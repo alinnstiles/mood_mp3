@@ -1,34 +1,73 @@
 .song-to-guess {
     text-align: center;
+    margin-top: 200px;
+  }
+  
+  .play-again-container {
+    margin-top: 400px;
+    margin-top: 0px;
+  }
+
+  
+  .song-title {
+    font-size: 24px;
+    margin-bottom:20px;
+  }
+  
+  
+  .song-player-container {
     margin-top: 20px;
   }
   
-  .soundman-header {
-    position: relative;
+
+  .song-to-guess {
+    text-align: center;
+    margin-top: 0px;
   }
+  
+
   
   .soundman-container {
     position: absolute;
-    top: -750px; /* Adjust this value based on your design */
-    left: 50%;
-    transform: translateX(-50%);
+    top: 50%; /* Move it to the vertical center */
+    left: 50%; /* Move it to the horizontal center */
+    transform: translate(-50%, -50%); /* Adjust to center it properly */
+    margin-top: -160px;
   }
+  
+
+  .song-char {
+    font-size: 24px; /* Adjust font size for the song characters */
+    margin: 0 4px; /* Adjust spacing between characters */
+  }
+  
+  
+ 
   
   .song-title {
     font-size: 24px;
     margin-bottom: 20px;
+    margin-top: 20px;
   }
   
   .keyboard-container {
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-bottom: 850px;
   }
   
   .message {
     margin-top: 20px;
     font-style: italic;
   }
+  .guess-song-title {
+    margin-top: 500px;
+    margin-bottom: 100px;
+  }
+
   
   .song-player-container {
-    margin-top: 20px;
+    margin-top: -75px;
   }
   
+ 
+ 

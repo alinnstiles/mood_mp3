@@ -1,84 +1,82 @@
-/* Existing styles */
+
 .login-container {
-    background: linear-gradient(to right, #65fe08, #abfe78,pink , #ff00ff, rgb(1235, 131, 1235));
-    min-height: 100vh;
+    background: linear-gradient(to right, #65fe08, #abfe78, pink, #ff00ff, rgb(235, 31, 235)); /* Your gradient colors */
+    min-height: 100vh; /* Adjusted to full viewport height */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px; /* Added padding for better spacing */
 }
 
-.logo-container {
-    display: flex; /* Assuming you want to use flexbox */
-    justify-content: center;
+.parent-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 100px; /* Adjust spacing below the logo container */
-}
-
-.logo {
-    max-width: 100%; /* Ensures the logo doesn't exceed its original size */
-    height: auto; /* Maintains aspect ratio */
-    /* Additional styles to increase size */
-    width: 1200px; /* Adjust the width to your desired size */
-    height: 1200px; /* Adjust the height proportionally if needed */
-}
-
-.login-logo {
-    max-width: 100px; /* Adjust the maximum width of the logo */
-    height: auto; /* Ensure the logo maintains its aspect ratio */
+    justify-content: center;
+    text-align: center; /* Center text horizontally */
+    margin-bottom: 10px; /* Adjust margin as needed */
 }
 
 .text-container {
-    font-size: 12px; /* Adjust font size for the introductory text */
-    display: center; /* Use flexbox to center items */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100%; /* Ensure it takes up full height */
-    margin-bottom: 10px; /* Adjust spacing above the button */
+    font-size: 32px;
+    margin-top: -150px;
+    margin-bottom: 50px; /* Adjust spacing below the text */
 }
 
-
-
+.logo-container{
+    margin-top: -200px
+}
 .custom-button {
+    margin-top: -20px; /* Adjust spacing above the button */
+    
+}
+
+.how-to-play-container {
+    margin-top: 20px; 
     background-color: #FF1493;
     border-color: #FF1493;
     color: white;
     font-family: 'MS Sans Serif', sans-serif;
-    font-size: 2px; /* Adjust font size for the button text */
-    padding: 20px 20px; /* Adjust padding to make the button larger */
-    border-radius: 5px; /* Optional: Adds rounded corners to the button */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* Optional: Adds a shadow for depth */
+    font-size: 20px; /* Adjust font size for the text */
+    padding: 20px; /* Adjust padding to increase size */
+    border-radius: 5px; /* Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* Adds shadow for depth */
+    text-align: center; /* Centers text horizontally */
 }
 
-/* Existing styles remain unchanged */
 
-/* Additional styles for mobile devices */
+
+/* Media query for smaller screens */
 @media (max-width: 767px) {
     .login-container {
-         padding: 0 200px; /* Add horizontal padding for better readability */
-     }
- 
-    .logo-container {
-         margin-bottom: -75px; /* Reduce negative margin for better spacing */
-     }
- 
-    .login-logo {
-         max-width: 100%; /* Scale down the logo to fit the screen width */
-         height: auto;
-     }
- 
-     .text-container {
-        text-align: center; /* Centers the text horizontally */
-        display: flex; /* Enables flexbox */
-        justify-content: center; /* Centers the text horizontally within the div */
-        align-items: center; /* Centers the text vertically within the div */
-        height: 100px; /* Adjusts the height of the div */
+        padding: 10px; /* Reduce padding for smaller screens */
     }
-    
- 
+
+    .text-container {
+        font-size: 24px; /* Decrease font size for smaller screens */
+    }
+
     .custom-button {
-         font-size: 35px; /* Increase font size for the button text */
-         padding: 15px 30px; /* Reduce padding to fit smaller screens */
-     }
- }
- 
+        padding: 15px 25px; /* Adjust button padding */
+    }
+}
+
+
+
+
+
+
+.custom-button {
+    margin-top: -20px; 
+    background-color: #FF1493;
+    border-color: #FF1493;
+    color: white;
+    font-family: 'MS Sans Serif', sans-serif;
+    font-size: 30px; /* Adjust font size for the text */
+    padding: 10px 70px; /* Adjust padding to increase size */
+    border-radius: 5px; /* Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25); /* Adds shadow for depth */
+    text-align: center; /* Centers text horizontally */
+}
+

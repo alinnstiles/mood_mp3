@@ -9,7 +9,7 @@
 }
 
 .soundman-container {
-  margin-bottom: 20px; /* Example margin for separation from song-container */
+  margin-bottom: -20px; /* Example margin for separation from song-container */
 }
 
 * {
