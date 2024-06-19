@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Keyboard from './Keyboard';
-import SongPlayer from './SongPlayer';
+import Player from './Player';
 import SoundmanDrawing from './SoundmanDrawing';
 import './SongToGuess.css';
 
-const SongToGuess = () => {
+const SongToGuess = ({ accessToken }) => {
   const songTitles = [
-    { title: "ESPRESSO", spotifyLink: "https://open.spotify.com/track/2qSkIjg1o9h3YT9RAgYN75?si=25f8bc86e2874662" },
-    { title: "I HAD SOME HELP", spotifyLink: "https://open.spotify.com/track/7221xIgOnuakPdLqT0F3nP?si=2f5fd9724fd24189" },
-    { title: "NOT LIKE US", spotifyLink: "https://open.spotify.com/track/6AI3ezQ4o3HUoP6Dhudph3?si=6d39fbee2bfb4847" },
-    { title: "LUNCH", spotifyLink: "https://open.spotify.com/track/629DixmZGHc7ILtEntuiWE?si=f8c805d097194ad4" },
-    { title: "TOO SWEET", spotifyLink: "https://open.spotify.com/track/4IadxL6BUymXlh8RCJJu7T?si=649ea76b32f14be6" },
-    { title: "REDRUM", spotifyLink: "https://open.spotify.com/track/52eIcoLUM25zbQupAZYoFh?si=f24f1fb546f04af2" },
-    { title: "CLUB CLASSICS", spotifyLink: "https://open.spotify.com/track/0CySZwyRJ0vyUqtSjM9i2k?si=e3c04a706a174e81" }
+    { title: "ESPRESSO", uri: "spotify:track:2qSkIjg1o9h3YT9RAgYN75" },
+    { title: "I HAD SOME HELP", uri: "spotify:track:7221xIgOnuakPdLqT0F3nP" },
+    { title: "NOT LIKE US", uri: "spotify:track:6AI3ezQ4o3HUoP6Dhudph3" },
+    { title: "LUNCH", uri: "spotify:track:629DixmZGHc7ILtEntuiWE" },
+    { title: "TOO SWEET", uri: "spotify:track:4IadxL6BUymXlh8RCJJu7T" },
+    { title: "REDRUM", uri: "spotify:track:52eIcoLUM25zbQupAZYoFh" },
+    { title: "CLUB CLASSICS", uri: "spotify:track:0CySZwyRJ0vyUqtSjM9i2k" }
   ];
 
   const getRandomSong = () => {
@@ -27,6 +27,16 @@ const SongToGuess = () => {
   const [showAlbum, setShowAlbum] = useState(false);
   const [wrongGuessCount, setWrongGuessCount] = useState(0);
   const [showPlayAgain, setShowPlayAgain] = useState(false); // State to control the display of Play Again button
+
+  useEffect(() => {
+    setCurrentSong(getRandomSong());
+    setGuessedLetters(new Set());
+    setGuessesLeft(7);
+    setMessage('');
+    setShowAlbum(false);
+    setWrongGuessCount(0);
+    setShowPlayAgain(false); // Hide Play Again button
+  }, []); // Initialize state on component mount
 
   const handleGuess = (key) => {
     const normalizedKey = key.toUpperCase();
@@ -95,6 +105,11 @@ const SongToGuess = () => {
         <SoundmanDrawing wrongGuessCount={wrongGuessCount} />
         <h2>Guess the Song Title</h2>
       </div>
+      {showAlbum && (
+        <div className="song-player-container">
+          <Player accessToken={accessToken} trackUri={currentSong.uri} />
+        </div>
+      )}
       {renderSongTitle()}
       <div className="keyboard-container">
         {guessesLeft > 0 && !allLettersGuessed() && (
@@ -104,11 +119,6 @@ const SongToGuess = () => {
       {message && (
         <div className="message">
           <p>{message}</p>
-        </div>
-      )}
-      {showAlbum && (
-        <div className="song-player-container">
-          <SongPlayer spotifyLink={currentSong.spotifyLink} />
         </div>
       )}
       {showPlayAgain && (
