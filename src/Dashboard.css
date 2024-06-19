@@ -1,16 +1,19 @@
 /* General reset and base styles */
-
 .dashboard-container {
-    background: linear-gradient(to right, #65fe08, #abfe78,pink , #ff00ff, rgb(235, 131, 235));
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background: linear-gradient(to right, #65fe08, #abfe78, pink, #ff00ff, rgb(235, 131, 235));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.soundman-container {
+  margin-bottom: 20px; /* Example margin for separation from song-container */
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

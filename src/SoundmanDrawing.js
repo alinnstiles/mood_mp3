@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './SoundmanDrawing.css';
 
-// Import images (assuming these are correctly imported as described in the question)
 import boothImage from './soundman.png/booth.png';
 import headImage from './soundman.png/head.png';
 import bodyImage from './soundman.png/body.png';
@@ -11,54 +10,42 @@ import leftArmImage from './soundman.png/left_arm.png';
 import rightRecordImage from './soundman.png/right_record.png';
 import rightArmImage from './soundman.png/right_arm.png';
 
-// Define the images as constants
-const BOOTH = <img src={boothImage} alt="Booth" style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)" }} />;
-const HEAD = <img src={headImage} alt="Head" style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)" }} />;
-const BODY = <img src={bodyImage} alt="Body" style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)" }} />;
-const HEADPHONES = <img src={headphoneImage} alt="Headphones" style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)" }} />;
-const LEFT_RECORD = <img src={leftRecordImage} alt="Left Record" style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)" }} />;
-const LEFT_ARM = <img src={leftArmImage} alt="Left Arm" style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)" }} />;
-const RIGHT_RECORD = <img src={rightRecordImage} alt="Right Record" style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)" }} />;
-const RIGHT_ARM = <img src={rightArmImage} alt="Right Arm" style={{ position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)" }} />;
+const BOOTH = <img key="booth" src={boothImage} alt="Booth" className="booth-img" />;
+const HEAD = <img key="head" src={headImage} alt="Head" className="head-img" />;
+const BODY = <img key="body" src={bodyImage} alt="Body" className="body-img" />;
+const HEADPHONES = <img key="headphones" src={headphoneImage} alt="Headphones" className="headphones-img" />;
+const LEFT_RECORD = <img key="left_record" src={leftRecordImage} alt="Left Record" className="left-record-img" />;
+const LEFT_ARM = <img key="left_arm" src={leftArmImage} alt="Left Arm" className="left-arm-img" />;
+const RIGHT_RECORD = <img key="right_record" src={rightRecordImage} alt="Right Record" className="right-record-img" />;
+const RIGHT_ARM = <img key="right_arm" src={rightArmImage} alt="Right Arm" className="right-arm-img" />;
 
 const BODY_PARTS = [
-    BOOTH,
-    HEAD,
-    BODY,
-    HEADPHONES,
-    LEFT_RECORD,
-    LEFT_ARM,
-    RIGHT_RECORD,
-    RIGHT_ARM,
+  BOOTH,
+  HEAD,
+  BODY,
+  HEADPHONES,
+  LEFT_RECORD,
+  LEFT_ARM,
+  RIGHT_RECORD,
+  RIGHT_ARM,
 ];
 
-const MAX_GUESSES = 7; // Maximum number of wrong guesses allowed
+const SoundmanDrawing = ({ wrongGuessCount, handleSoundmanClick }) => {
+  const boothComponent = (
+    <div className="booth-container">
+      {BOOTH}
+    </div>
+  );
 
-export function SoundmanDrawing({ numberOfGuesses }) {
-    // State to keep track of the number of wrong guesses
-    const [wrongGuessCount, setWrongGuessCount] = useState(0);
+  const bodyParts = BODY_PARTS.slice(1, wrongGuessCount + 1);
 
-    // Function to handle wrong letter click
-    const handleWrongGuess = () => {
-        if (wrongGuessCount < MAX_GUESSES) {
-            setWrongGuessCount(wrongGuessCount + 1);
-        }
-    };
+  return (
+    <div className="soundman-container" onClick={handleSoundmanClick}>
+      {[boothComponent, ...bodyParts].map((part, index) => (
+        <React.Fragment key={index}>{part}</React.Fragment>
+      ))}
+    </div>
+  );
+};
 
-    // Determine whether to show the initial message or the adjusted parts
-    const componentContent = wrongGuessCount > 0 ? (
-        <div style={{ position: "relative" }}>
-            {BODY_PARTS.slice(0, wrongGuessCount).map((part, index) => (
-                <React.Fragment key={index}>{part}</React.Fragment>
-            ))}
-        </div>
-    ) : (
-        BOOTH // Display only the booth image when there are no guesses yet
-    );
-
-    return (
-        <div className="soundman-drawing" onClick={handleWrongGuess}>
-            {componentContent}
-        </div>
-    );
-}
+export default SoundmanDrawing;

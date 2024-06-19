@@ -1,0 +1,34 @@
+.song-to-guess {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .soundman-header {
+    position: relative;
+  }
+  
+  .soundman-container {
+    position: absolute;
+    top: -750px; /* Adjust this value based on your design */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .song-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .keyboard-container {
+    margin-top: 20px;
+  }
+  
+  .message {
+    margin-top: 20px;
+    font-style: italic;
+  }
+  
+  .song-player-container {
+    margin-top: 20px;
+  }
+  

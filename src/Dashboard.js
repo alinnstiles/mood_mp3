@@ -1,24 +1,19 @@
-import React from 'react';
-import axios from 'axios';
-import useAuth from './useAuth'; // Adjust the path according to your project structure
-import { SoundmanDrawing } from './SoundmanDrawing';
+import React, { useState } from 'react';
 import SongToGuess from './SongToGuess';
-import Keyboard from './Keyboard';
-import './Dashboard.css'; // Import the CSS file
+import './Dashboard.css';
 
-const Dashboard = ({ code }) => {
-  const accessToken = useAuth(code); // Assuming useAuth handles token retrieval
+const Dashboard = () => {
+  const [wrongGuessCount, setWrongGuessCount] = useState(0);
+
+  const handleSoundmanClick = () => {
+    setWrongGuessCount(wrongGuessCount + 1);
+    // Add any additional logic for handling clicks on SoundmanDrawing
+  };
 
   return (
     <div className="dashboard-container">
-      <div className="soundman-container">
-        <SoundmanDrawing />
-      </div>
       <div className="song-container">
-        {accessToken && <SongToGuess accessToken={accessToken} />}
-      </div>
-      <div className="keyboard-container">
-        <Keyboard />
+        <SongToGuess />
       </div>
     </div>
   );
